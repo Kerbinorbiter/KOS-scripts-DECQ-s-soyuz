@@ -1,0 +1,20 @@
+print "waiting until altitude is 140Km...".
+wait until altitude < 140000.
+stage.
+wait until altitude < 70000.
+lock steering to retrograde +r(0,-20,0).
+wait until SHIP:AIRSPEED < 1000.
+unlock steering.
+Print "Altitude" + altitude.
+Print "altitude (True)" + ALT:RADAR.
+print "Velocity (should be 1000)" + SHIP:AIRSPEED.
+wait until ALTITUDE < 10000.
+stage.
+print "parachutes deployed.".
+unlock steering.
+AG1 on.
+AG2 off.
+wait until ALT:RADAR < 1000.
+stage.
+wait until ALT:RADAR < 1.
+stage.
